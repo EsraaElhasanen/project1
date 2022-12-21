@@ -24,10 +24,10 @@ jobs:
 
       
       - name: Trigger 1
-        run: java -jar jenkins-cli.jar -s ${{ secrets.JENKINS_URL }}  build BackEnd_Checkout -s -v
+        run: curl -s -H "Authorization: JWT ${{ secrets.JENKINSTOKEN }}" "http://192.168.1.178:8080/job/Backed-CI/job/main/" 
 
       - name: Trigger Jenkins Job
-        uses: sbitio/trigger-jenkins-job@master
+        uses: sbitio/trigger-jenkins-job@master      
         with:
           JENKINS_USER: ${{ secrets.JENKINS_USER }}
           JENKINS_TOKEN: ${{ secrets.JENKINSTOKEN }}
@@ -35,7 +35,7 @@ jobs:
           JENKINS_JOB: "Backed-CI"
 
 
-      - name: Trigger jenkins job2
+      - name: Trigger jenkins job2 
         uses: jabbukka/jenkins-trigger@main
         with:
           url: ${{ secrets.JENKINS_URL }}       
