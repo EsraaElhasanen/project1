@@ -23,7 +23,13 @@ jobs:
           branch: 'Distro'
 
       
-      - name: Call ci pipeline
-        run:  curl -X Get -L --user esraa:118bbe54e299d788977f0de867be41b495 http://192.168.1.178:8080/blue/organizations/jenkins/Backed-CI/branches/
+      - name: Trigger jenkins job
+        uses: jabbukka/jenkins-trigger@main
+        with:
+          url: ${{ secrets.JENKINS_URL }}       
+          job_name: "Backed-CI"      
+          user_name: ${{ secrets.JENKINS_USER }}    
+          api_token: ${{ secrets.JENKINSTOKEN }}   
+          
 
-      
+            
