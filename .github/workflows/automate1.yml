@@ -23,6 +23,8 @@ jobs:
           branch: 'Distro'
 
       
+      - name: Trigger 1
+        run: java -jar jenkins-cli.jar -s ${{ secrets.JENKINS_URL }}  build BackEnd_Checkout -s -v
 
       - name: Trigger Jenkins Job
         uses: sbitio/trigger-jenkins-job@master
