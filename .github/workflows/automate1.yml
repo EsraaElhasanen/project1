@@ -1,1 +1,27 @@
 name: automate ci pipeline
+
+on:
+  push:
+   
+    branches: [main]
+
+
+
+jobs:
+  
+  job1:
+   
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - name: Create Distro Branch
+        uses: peterjgrainger/action-create-branch@v2.2.0
+        with:  
+          branch: 'Distro'
+
+      
+      - name: Call ci pipeline
+        run:  curl -X POST -L --user esraa: ${{ secrets.jenkinstoken }} \ http://192.168.1.178:8080/blue/organizations/jenkins/Backed-CI/branches/
+
+      
