@@ -37,7 +37,7 @@ jobs:
         uses: jabbukka/jenkins-trigger@main
         with:
           url: ${{ secrets.JENKINS_URL }}       
-          job_name: "Backed-CI"      
+          job_name: "BackEnd_Checkout"      
           user_name: ${{ secrets.JENKINS_USER }}    
           api_token: ${{ secrets.JENKINSTOKEN }}   
           
