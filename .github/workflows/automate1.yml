@@ -22,6 +22,6 @@ jobs:
 
       
       - name: Call ci pipeline
-        run:  curl -X POST -L --user esraa: ${{ secrets.jenkinstoken }} \ http://192.168.1.178:8080/blue/organizations/jenkins/Backed-CI/branches/
+        run:  curl -X Get -L --user esraa:118bbe54e299d788977f0de867be41b495 http://192.168.1.178:8080/blue/organizations/jenkins/Backed-CI/branches/
 
       
