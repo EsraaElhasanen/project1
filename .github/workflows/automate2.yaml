@@ -3,7 +3,7 @@ name: automate cd pipeline
 on:
   create:
    
-    branches: [^Dis]
+    branches: [Distro]
 
 
 
