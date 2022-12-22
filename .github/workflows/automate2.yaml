@@ -9,18 +9,18 @@ on:
 
 jobs:
   
-  job1:
+  job2:
    
     runs-on: ubuntu-latest
 
     steps:
 
-      - name: Create Distro Branch
-        uses: peterjgrainger/action-create-branch@v2.2.0
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
-        with:  
-          branch: 'Distro'
+      - name: Generate Version
+        id: versioning
+        uses: sceccotti89/Github-Action-Versioning@v1.0.5
+    
+      - name: Get the output version
+        run: echo "Version = ${{ steps.versioning.outputs.version }}"
           
           
 
