@@ -21,6 +21,10 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
         with:  
           branch: 'Distro'
+          
+          
+       - name: ccc
+         run: git config --global --unset http.proxy
 
       
       - name: Trigger 1
