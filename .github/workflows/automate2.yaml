@@ -1,0 +1,31 @@
+name: automate cd pipeline
+
+on:
+  push:
+   
+    branches: [main]
+
+
+
+jobs:
+  
+  job1:
+   
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - name: Create Distro Branch
+        uses: peterjgrainger/action-create-branch@v2.2.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
+        with:  
+          branch: 'Distro'
+          
+          
+
+     
+
+      
+      - name: Trigger 1
+        run: curl -X POST -u esraa:118bbe54e299d788977f0de867be41b495 http://196.219.234.11:8090//job/Backend-CD/job/branch2/build 
