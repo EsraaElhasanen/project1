@@ -28,8 +28,9 @@ jobs:
 
       
       - name: Trigger 1
-        run: git config --global --unset http.proxy
-        run: curl -X POST -u esraa:118bbe54e299d788977f0de867be41b495 http://192.168.1.178:8080/job/Backed-CI/job/main/build
+        run: | 
+          git config --global --unset http.proxy
+          curl -X POST -u esraa:118bbe54e299d788977f0de867be41b495 http://192.168.1.178:8080/job/Backed-CI/job/main/build
 
 
  
