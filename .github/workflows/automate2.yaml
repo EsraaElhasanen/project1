@@ -1,9 +1,9 @@
 name: automate cd pipeline
 
 on:
-  create:
-   
-    branches: [Distro]
+  check_run:
+    types: [created]
+    branchs: [Distro]
 
 
 
