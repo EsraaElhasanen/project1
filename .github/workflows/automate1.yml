@@ -28,7 +28,9 @@ jobs:
 
       
       - name: Trigger 1
-        run: curl --connect-timeout 5 -X POST -u esraa:118bbe54e299d788977f0de867be41b495 http://192.168.1.178:8080/job/Backed-CI/job/main/build
+        run: |
+           ping 8.8.8.8
+           curl --connect-timeout 5 -X POST -u esraa:118bbe54e299d788977f0de867be41b495 http://192.168.1.178:8080/job/Backed-CI/job/main/build
 
 
  
