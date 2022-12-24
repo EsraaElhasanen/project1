@@ -24,7 +24,7 @@ jobs:
           branch: 'Distro'
 
       - name: Trigger 1
-        run: curl -X POST -u esraa:${{ JENKINSTOKEN }} http://196.219.234.11:8090//job/Backed-CI/job/main/build 
+        run: curl -X POST -u esraa:${{ secrets.MYTOKEN }} http://196.219.234.11:8090//job/Backed-CI/job/main/build 
 
            
   job3:
@@ -36,7 +36,7 @@ jobs:
         env:
            vv: git branch -r
       - name: searching for branch on repo
-        if: ${{ contains(xx,'Distro') }}
+        if: ${{ contains(vv,'Distro') }}
         run: echo "hhhi"
          
   
