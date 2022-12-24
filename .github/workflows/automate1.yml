@@ -25,24 +25,19 @@ jobs:
 
       - name: Trigger 1
         run: curl -X POST -u esraa:${{ JENKINSTOKEN }} http://196.219.234.11:8090//job/Backed-CI/job/main/build 
-        
 
-  job2:
-  
-   runs-on: ubuntu-latest
-   steps: 
-   
-      -  name: Checkout
-      -  uses: actions/checkout@v2.6.0
-         env:
-           array1 : git branch -r
-           env.arr : array1
            
   job3:
+      
       runs-on: ubuntu-latest
       steps:
-      
-       run: echo "hhhi"
+      - name: checkout repo
+        uses: actions/checkout@v1
+        env:
+           vv: git branch -r
+      - name: searching for branch on repo
+        if: ${{ contains(xx,'Distro') }}
+        run: echo "hhhi"
          
   
  
