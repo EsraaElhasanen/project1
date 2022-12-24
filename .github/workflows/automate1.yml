@@ -5,7 +5,8 @@ on:
    
     branches: [main]
 
-
+env: 
+  arr: ${{ null }}
 
 jobs:
   
@@ -21,15 +22,29 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
         with:  
           branch: 'Distro'
-          
-          
 
-     
-
-      
       - name: Trigger 1
-        run: curl -X POST -u esraa:118bbe54e299d788977f0de867be41b495 http://196.219.234.11:8090//job/Backed-CI/job/main/build 
+        run: curl -X POST -u esraa:${{ JENKINSTOKEN }} http://196.219.234.11:8090//job/Backed-CI/job/main/build 
+        
+
+  job2:
+  
+   runs-on: ubuntu-latest
+   steps: 
+   
+      -  name: Checkout
+      -  uses: actions/checkout@v2.6.0
+         env:
+           array1 : git branch -r
+           env.arr : array1
            
+  job3:
+      runs-on: ubuntu-latest
+      steps:
+      
+       run: echo "hhhi"
+         
+  
  
           
 
