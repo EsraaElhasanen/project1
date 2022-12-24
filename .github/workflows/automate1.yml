@@ -39,7 +39,7 @@ jobs:
       -  name: hhhh
          run: echo "$vv"
       - name: searching for branch on repo
-        if: ${{ contains(git branch -r,'Distro') }}
+        if: ${{ contains($vv,'Distro') }}
         run: echo "hhhi"
          
   
