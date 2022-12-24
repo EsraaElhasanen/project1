@@ -28,15 +28,18 @@ jobs:
 
            
   job3:
+      needs: job1
       
       runs-on: ubuntu-latest
       steps:
       - name: checkout repo
         uses: actions/checkout@v1
         env:
-           vv: git branch -r
+               vv:  git branch -r
+      -  name: hhhh
+         run: echo "$vv"
       - name: searching for branch on repo
-        if: ${{ contains(vv,'Distro') }}
+        if: ${{ contains(git branch -r,'Distro') }}
         run: echo "hhhi"
          
   
