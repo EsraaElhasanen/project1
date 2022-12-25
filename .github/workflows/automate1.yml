@@ -16,7 +16,7 @@ jobs:
       - name: checkout repo
         uses: actions/checkout@v1
       - name: list branches
-        run: git branch
+        run: git branch -r 
       - name: list tags
         run: git tag -n
 
