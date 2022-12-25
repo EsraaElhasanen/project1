@@ -61,9 +61,10 @@ jobs:
           git config --global user.email "esraa.hassanien@aiactive.com"
           git config --global user.name "esraaelhasanen"
           echo "merging"
-          gh pr create --title "The bug is fixed" --body "Everything works again"
+        
           git checkout origin/Distro 
-          gh pr create --base Distro --head main
+          git branch
+          gh pr create --title "fff" -- body "ffff" --base Distro --head main
 
           echo "Switching to Distro"
           git checkout origin/Distro 
