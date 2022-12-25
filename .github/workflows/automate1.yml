@@ -48,6 +48,7 @@ jobs:
 
       - name: validate Distro branch exist
         run: |
+           sudo git branch -r >> /home/data/text1
            grep 'Distro'  /home/data1/text1 
            echo "value of last previous command $?"
           
