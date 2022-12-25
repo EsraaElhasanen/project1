@@ -66,6 +66,8 @@ jobs:
           git log -- pretty=oneline
           echo "listing"
           git tag -n 
+          git branch
+          git log --oneline
 
        
 
