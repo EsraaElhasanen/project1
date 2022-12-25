@@ -51,12 +51,16 @@ jobs:
            
       
       - name: Create an incremental release
+        run: git clone git@github.com:esraaelhasanen/https://github.com/esraaelhasanen/project1.git
+      - name: berasde
         uses: aurestic/incrementarl-create-release@master
         with:
          flag_branch: true
          message: Bump version
          prev_tag: 'v'
          update_odoo_module_version: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
 
  
           
