@@ -65,6 +65,8 @@ jobs:
           git checkout origin/Distro 
           git branch
           gh pr create --title "fff" --body "ffff" --base Distro --head main
+          gh pr merge main
+
 
           echo "Switching to Distro"
           git checkout origin/Distro 
