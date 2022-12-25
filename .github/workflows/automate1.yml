@@ -22,7 +22,7 @@ jobs:
       - name: list tags
         run: git tag -n
       - name: remove Distro
-        run: git branch -d  origin/Distro
+        run: git checkout origin/Distro
 
       - name: Create Distro Branch
         uses: peterjgrainger/action-create-branch@v2.2.0
