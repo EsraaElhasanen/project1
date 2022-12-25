@@ -42,10 +42,13 @@ jobs:
         run: whoami
       - name: list 
         run: |
-          mkdir /home/data1
+          sudo mkdir /home/data1
+          sudo vi /home/data1/text1
+          sudo cat /etc/sudoers
+
       - name: access values
         run: |
-          echo "TAG_NAME=$(git branch -r)" >> /home/text1
+          echo "TAG_NAME=$(git branch -r)" >> /home/data1/text1
           
 
          
