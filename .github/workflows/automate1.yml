@@ -15,8 +15,10 @@ jobs:
     steps:
       - name: checkout repo
         uses: actions/checkout@v1
-      - name: list branches
+      - name: list remote branches
         run: git branch -r 
+      - name: list local branches
+        run: git branch
       - name: list tags
         run: git tag -n
 
