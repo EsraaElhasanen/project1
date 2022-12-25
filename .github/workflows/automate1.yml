@@ -57,6 +57,9 @@ jobs:
           git log --pretty=oneline
           echo "List branches"
           git branch -r
+          echo "Configure who ami"
+          git config --global user.email "esraa.hassanien@aiactive.com"
+          git config --global user.name "esraaelhasanen"
           echo "Switching to Distro"
           git checkout origin/Distro  
           git tag -a v.1.1
