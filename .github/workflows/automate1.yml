@@ -47,10 +47,8 @@ jobs:
       - name: validate Distro branch exist
         run: |
            sudo git branch -r >> /home/data1/text1
-           grep 'Distro'  /home/data1/text1 
-      - name: gg
-        if : ${{ "$?" == 0}}
-        run: echo "fggg"
+           grep 'Distrocvgg'  /home/data1/text1 
+      
  
           
   
