@@ -58,7 +58,7 @@ jobs:
           echo "List branches"
           git branch -r
           echo "List Tagssss"
-          git tag -n
+        
           git checkout Origin/Distro
           git tag -a v.1.1
           git log -- pretty=oneline
