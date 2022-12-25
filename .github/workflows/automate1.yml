@@ -64,7 +64,7 @@ jobs:
       - name: Taging
         uses: nimblehq/branch-tag-action@v1
         with:
-          ref: 'Distro'
+          ref: Distro
       
  
           
