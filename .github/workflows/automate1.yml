@@ -13,12 +13,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: checkout repo
-        uses: actions/checkout@v1
-      - name: list branches
-        run: git branch -r 
-      - name: list tags
-        run: git tag -n
+      
 
       - name: Create Distro Branch
         uses: peterjgrainger/action-create-branch@v2.2.0
@@ -29,12 +24,13 @@ jobs:
 
       - name: Trigger 1
         run: curl -X POST -u esraa:${{ secrets.MYTOKEN }} http://196.219.234.11:8090//job/Backed-CI/job/main/build 
-      - name: username
-        run: whoami
+      
 
            
   job3:
       needs: job1
+      env:
+         GH_TOKEN: ${{secrets.TOKEN_1}}
       
       runs-on: ubuntu-latest
       steps:
@@ -60,17 +56,25 @@ jobs:
       - name: Create an incremental release
         run: |
           echo "List branches"
-          git branch -r
+          git branch -a
           echo "Configure who ami"
           git config --global user.email "esraa.hassanien@aiactive.com"
           git config --global user.name "esraaelhasanen"
+          echo "merging"
+        
+          git checkout origin/Distro 
+          git branch
+          gh pr create --title "fff" --body "ffff" --base Distro --head main
+          git ls-tree -r --name-only origin/Distro
+
+
           echo "Switching to Distro"
-          git checkout origin/Distro  
+          git checkout origin/Distro 
           git tag -a v.1.1 -m "trying to point to Distro"
           echo "listing"
           git tag -n 
           git branch
-          git log --oneline
+          git ls-tree -r --name-only origin/Distro
           echo "Trigger CD Pipeline"
           curl -X POST -u esraa:${{ secrets.MYTOKEN }} http://196.219.234.11:8090//job/Backend-CD/job/branch2/build 
 
