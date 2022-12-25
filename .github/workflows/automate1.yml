@@ -48,8 +48,10 @@ jobs:
         run: |
            sudo git branch -r >> /home/data1/text1
            grep 'Distro'  /home/data1/text1 
-           if : "${{ $? == 0}}"
-           run: "echo  bb"
+      - name: gg
+        if : ${{ $? == 0}}
+        run: echo "fggg"
+ 
           
   
 
