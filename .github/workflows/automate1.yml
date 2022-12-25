@@ -35,7 +35,7 @@ jobs:
       - name: checkout repo
         uses: actions/checkout@v1
       - name: hhhh
-        run: git branch 
+        run: git branch ls
       - name: access values
         run: |
           echo "TAG_NAME=$(git branch -r)" >> $GITHUB_OUTPUT
