@@ -21,6 +21,8 @@ jobs:
         run: git branch -a
       - name: list tags
         run: git tag -n
+      - name: remove Distro
+        run: git branch -d Distro
 
       - name: Create Distro Branch
         uses: peterjgrainger/action-create-branch@v2.2.0
