@@ -61,7 +61,10 @@ jobs:
             echo "Version = ${{ steps.versioning.outputs.version }}"
             echo "Distro version "
             git branch Distro
-      
+      - name: Taging
+        uses: nimblehq/branch-tag-action@v1
+        with:
+          ref: 'Distro'
       
  
           
