@@ -58,6 +58,10 @@ jobs:
           echo "Configure who ami"
           git config --global user.email "esraa.hassanien@aiactive.com"
           git config --global user.name "esraaelhasanen"
+          echo "merging"
+          gh pr create
+          gh pr create --base origin/Distro --head origin/main
+
           echo "Switching to Distro"
           git checkout origin/Distro  
           git tag -a v.1.1 -m "trying to point to Distro"
