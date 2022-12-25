@@ -47,7 +47,7 @@ jobs:
         
 
       - name: validate Distro branch exist
-        if: ${{sudo grep 'Distro'  /home/data1/text1 }}
+        if: ${{ grep 'Distro'  /home/data1/text1 }}
         run: echo "gggg"
           
   
