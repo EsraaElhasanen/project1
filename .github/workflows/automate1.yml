@@ -52,8 +52,7 @@ jobs:
       
       - name: Create an incremental release
         run: |
-          echo "list tags"
-          git log --pretty=oneline
+          
           git tag v.1.0
           echo "After create tag"
           git log --pretty=oneline
@@ -61,7 +60,9 @@ jobs:
           git branch -r
           echo "List Tagssss"
           git tag -n
-           
+          git checkout Distro
+          git tag -a v.1.0
+          git log -- pretty=oneline
 
        
 
