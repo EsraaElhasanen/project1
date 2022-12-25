@@ -47,8 +47,9 @@ jobs:
         
 
       - name: validate Distro branch exist
-        if: ${{ grep 'Distro'  /home/data1/text1 }}
-        run: echo "gggg"
+        run: |
+           grep 'Distro'  /home/data1/text1 
+           echo "value of last previous command $?"
           
   
 
