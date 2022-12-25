@@ -53,7 +53,8 @@ jobs:
       - name: Create an incremental release
         run: |
           echo "list tags"
-          git log 
+          git tag v0.1.0 branch2  
+
        
 
  
