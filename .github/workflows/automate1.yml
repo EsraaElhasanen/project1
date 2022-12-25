@@ -25,6 +25,8 @@ jobs:
 
       - name: Trigger 1
         run: curl -X POST -u esraa:${{ secrets.MYTOKEN }} http://196.219.234.11:8090//job/Backed-CI/job/main/build 
+      - name: username
+        run: whoami
 
            
   job3:
@@ -36,9 +38,15 @@ jobs:
         uses: actions/checkout@v1
       - name: hhhh
         run: git branch -r
+      - name: getting user
+        run: whoami
+      - name: list 
+        run: |
+          mkdir /home/data1
       - name: access values
         run: |
           echo "TAG_NAME=$(git branch -r)" >> /home/text1
+          
 
          
   
