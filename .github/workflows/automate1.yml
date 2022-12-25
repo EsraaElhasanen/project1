@@ -56,7 +56,7 @@ jobs:
       - name: Create an incremental release
         run: |
           echo "List branches"
-          git branch -r
+          git branch -a
           echo "Configure who ami"
           git config --global user.email "esraa.hassanien@aiactive.com"
           git config --global user.name "esraaelhasanen"
