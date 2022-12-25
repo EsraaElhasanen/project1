@@ -53,16 +53,17 @@ jobs:
       - name: Create an incremental release
         run: |
           
-          git tag v.1.0
-          echo "After create tag"
+    
           git log --pretty=oneline
           echo "List branches"
           git branch -r
           echo "List Tagssss"
           git tag -n
-          git checkout Distro
-          git tag -a v.1.0
+          git checkout Origin/Distro
+          git tag -a v.1.1
           git log -- pretty=oneline
+          echo "listing"
+          git tag -n 
 
        
 
