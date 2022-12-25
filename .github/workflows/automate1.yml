@@ -13,6 +13,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: checkout repo
+        uses: actions/checkout@v1
+      - name: list branches
+        run: git branch -r 
+      - name: list tags
+        run: git tag -n
 
       - name: Create Distro Branch
         uses: peterjgrainger/action-create-branch@v2.2.0
@@ -32,6 +38,7 @@ jobs:
       
       runs-on: ubuntu-latest
       steps:
+      
       - name: checkout repo
         uses: actions/checkout@v1
       - name: hhhh
