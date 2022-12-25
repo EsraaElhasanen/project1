@@ -34,13 +34,12 @@ jobs:
       steps:
       - name: checkout repo
         uses: actions/checkout@v1
-        env:
-               vv:  git branch -r
-      -  name: hhhh
-         run: echo "$vv"
-      - name: searching for branch on repo
+      - name: hhhh
+        run: git branch -r
+      - name: access values
+        run: |
+          echo "TAG_NAME=$(git branch -r)" >> $GITHUB_OUTPUT
 
-        run: echo "hhhi"
          
   
  
