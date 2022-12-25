@@ -61,7 +61,7 @@ jobs:
           git config --global user.email "esraa.hassanien@aiactive.com"
           git config --global user.name "esraaelhasanen"
           echo "merging"
-          gh pr create
+      
           gh pr create --base origin/Distro --head origin/main
 
           echo "Switching to Distro"
