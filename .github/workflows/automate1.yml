@@ -40,15 +40,19 @@ jobs:
         run: git branch -r
       - name: getting user
         run: whoami
-      - name: list 
+      - name: create directory
         run: |
           sudo mkdir /home/data1
-          sudo vi /home/data1/text1
-          sudo cat /etc/sudoers
+          sudo touch /home/data1/text1
+        
 
       - name: access values
         run: |
-          echo "TAG_NAME=$(git branch -r)" >> /home/data1/text1
+          sudo  git branch -r >> /home/data1/text1
+          
+      - name: display content
+        run: 
+          sudo cat /home/data1/text1
           
 
          
