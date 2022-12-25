@@ -30,7 +30,7 @@ jobs:
   job3:
       needs: job1
       env:
-         github_tokenn: ${{secrets.TOKEN_1}}
+         GH_TOKEN: ${{secrets.TOKEN_1}}
       
       runs-on: ubuntu-latest
       steps:
