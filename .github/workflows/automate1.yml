@@ -57,9 +57,8 @@ jobs:
           git log --pretty=oneline
           echo "List branches"
           git branch -r
-          echo "List Tagssss"
-        
-          git checkout Origin/Distro
+          echo "Switching to Distro"
+          git checkout origin/Distro  
           git tag -a v.1.1
           git log -- pretty=oneline
           echo "listing"
