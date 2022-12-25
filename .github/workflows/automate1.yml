@@ -50,10 +50,12 @@ jobs:
         run: |
           sudo  git branch -r >> /home/data1/text1
           
-      - name: display content
-        run: 
-          sudo cat /home/data1/text1
+  
+
+
+    
           
+        
 
          
   
