@@ -62,7 +62,7 @@ jobs:
           git config --global user.name "esraaelhasanen"
           echo "Switching to Distro"
           git checkout origin/Distro  
-          git tag -a v.1.1
+          git tag -a v.1.1 -m "trying to point to Distro"
           git log -- pretty=oneline
           echo "listing"
           git tag -n 
