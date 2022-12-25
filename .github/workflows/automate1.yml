@@ -59,6 +59,8 @@ jobs:
           git log --pretty=oneline
           echo "List branches"
           git branch -r
+          echo "List Tagssss"
+          git tag -n
            
 
        
