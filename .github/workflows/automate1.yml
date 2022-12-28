@@ -15,19 +15,19 @@ jobs:
     steps:
       
 
-      - name: Create Distro Branch
+      - name: Create Koalaaaa Branch
         uses: peterjgrainger/action-create-branch@v2.2.0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
         with:  
-          branch: 'Distro'
+          branch: 'Koalaaaa'
 
       - name: Trigger 1
-        run: curl -X POST -u esraa:${{ secrets.MYTOKEN }} http://196.219.234.11:8090//job/Backed-CI/job/main/build 
+        run: curl -X POST -u esraa:${{ secrets.MYTOKEN }} http://196.219.234.11:8090//job/Cleanup-CI/job/main/build 
       
 
            
-  job3:
+  job2:
       needs: job1
       env:
          GH_TOKEN: ${{secrets.TOKEN_1}}
@@ -50,7 +50,7 @@ jobs:
       - name: validate Distro branch exist
         run: |
            sudo git branch -r >> /home/data1/text1
-           grep 'Distro'  /home/data1/text1 
+           grep 'Koalaaaa'  /home/data1/text1 
            
       
       - name: Create an incremental release
@@ -62,22 +62,22 @@ jobs:
           git config --global user.name "esraaelhasanen"
           echo "merging"
         
-          git checkout origin/Distro 
+          git checkout origin/Koalaaaa 
           git branch
-          gh pr create --title "fff" --body "ffff" --base Distro --head main
+          gh pr create --title "fff" --body "ffff" --base Koalaaaa --head main
           gh pr merge --merge
           git ls-tree -r --name-only origin/Distro
 
 
-          echo "Switching to Distro"
-          git checkout origin/Distro 
-          git tag -a v.1.1 -m "trying to point to Distro"
+          echo "Switching to Koalaaaa"
+          git checkout origin/Koalaaaa 
+          git tag -a v.1.1 -m "trying to point to Koalaaaa"
           echo "listing"
           git tag -n 
           git branch
-          git ls-tree -r --name-only origin/Distro
+          git ls-tree -r --name-only origin/Koalaaaa
           echo "Trigger CD Pipeline"
-          curl -X POST -u esraa:${{ secrets.MYTOKEN }} http://196.219.234.11:8090//job/Backend-CD/job/branch2/build 
+          curl -X POST -u esraa:${{ secrets.MYTOKEN }} http://196.219.234.11:8090//job/Cleanup-CD/job/branch2/build 
 
        
 
