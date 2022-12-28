@@ -78,6 +78,7 @@ jobs:
         run: |
           git branch 
           git tag -a v.1.1 -m "trying to point to Koalaaaa"
+          git tag -n 
           echo "listing"
           
           git ls-tree -r --name-only origin/Koalaaaa
